@@ -1,0 +1,11 @@
+{
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+    },
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": false,
+    "files.trimTrailingWhitespace": true,
+    "files.eol": "\n",
+}
