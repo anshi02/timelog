@@ -21,7 +21,7 @@ import appConfig from './config/app.config';
                 password: configService.get<string>('db.password'),
                 database: configService.get<string>('db.databaseName'),
                 synchronize: true,
-                connectTimeout: 15000, // 15 secs
+                connectTimeout: configService.get<number>('db.timeoutMillis'),
             }),
         }),
     ],

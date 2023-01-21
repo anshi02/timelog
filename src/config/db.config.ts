@@ -11,6 +11,7 @@ export default () => {
             username: env.DB_USERNAME!,
             password: env.DB_PASSWORD!,
             databaseName: env.DB_NAME!,
+            timeoutMillis: parseInt(env.TIMEOUT_MILLIS!, 10),
         },
     };
 
