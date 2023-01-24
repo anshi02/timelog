@@ -7,7 +7,7 @@ import {
     OneToOne,
     PrimaryGeneratedColumn,
 } from 'typeorm';
-import UserProfile from './userProfile.entity';
+import UserProfile from './user-profile.entity';
 
 @Entity('users')
 export default class User {
