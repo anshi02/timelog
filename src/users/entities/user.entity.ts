@@ -1,7 +1,9 @@
+import Project from 'src/projects/entities/project.entity';
 import {
     Column,
     Entity,
     JoinColumn,
+    OneToMany,
     OneToOne,
     PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -26,4 +28,9 @@ export default class User {
     })
     @JoinColumn()
     profile: UserProfile;
+
+    @OneToMany(() => Project, (project) => project.owner, {
+        onDelete: 'CASCADE',
+    })
+    projects: Project[];
 }
