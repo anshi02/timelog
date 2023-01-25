@@ -1,5 +1,10 @@
+import Department from 'src/departments/entities/department.entity';
+import Division from 'src/divisions/entities/division.entity';
+import Faculty from 'src/faculties/entities/faculty.entity';
+import RoomType from 'src/rooms/entities/room-type.entity';
+import Schedule from 'src/schedules/entities/schedule.entity';
 import Subject from 'src/subjects/entities/subject.entity';
-import TimeSlot from 'src/time-slots/entities/time-slot';
+import TimeSlot from 'src/time-slots/entities/time-slot.entity';
 import User from 'src/users/entities/user.entity';
 import {
     Column,
@@ -24,13 +29,38 @@ export default class Project {
     @JoinColumn()
     owner: User;
 
-    @OneToMany(() => TimeSlot, (timeSlot) => timeSlot.project, {
-        onDelete: 'CASCADE',
-    })
-    timeSlots: TimeSlot[];
-
     @OneToMany(() => Subject, (subject) => subject.project, {
         onDelete: 'CASCADE',
     })
     subjects: Subject[];
+
+    @OneToMany(() => Department, (department) => department.project, {
+        onDelete: 'CASCADE',
+    })
+    departments: Department[];
+
+    @OneToMany(() => Schedule, (schedule) => schedule.project, {
+        onDelete: 'CASCADE',
+    })
+    schedules: Schedule[];
+
+    @OneToMany(() => Faculty, (faculty) => faculty.project, {
+        onDelete: 'CASCADE',
+    })
+    faculties: Faculty[];
+
+    @OneToMany(() => RoomType, (roomType) => roomType.project, {
+        onDelete: 'CASCADE',
+    })
+    roomTypes: RoomType[];
+
+    @OneToMany(() => Division, (division) => division.project, {
+        onDelete: 'CASCADE',
+    })
+    divisions: Division[];
+
+    @OneToMany(() => TimeSlot, (timeSlot) => timeSlot.project, {
+        onDelete: 'CASCADE',
+    })
+    timeSlots: TimeSlot[];
 }

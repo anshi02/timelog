@@ -8,6 +8,7 @@ import {
     PrimaryGeneratedColumn,
 } from 'typeorm';
 import UserProfile from './user-profile.entity';
+import Faculty from 'src/faculties/entities/faculty.entity';
 
 @Entity('users')
 export default class User {
@@ -33,4 +34,7 @@ export default class User {
         onDelete: 'CASCADE',
     })
     projects: Project[];
+
+    @OneToMany(() => Faculty, (faculty) => faculty.user)
+    faculties: Faculty[];
 }

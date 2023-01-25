@@ -12,7 +12,7 @@ export default class UserProfile {
     @Column({ length: 100, nullable: true })
     lastName: string;
 
-    @Column({ length: 1000, type: 'text' })
+    @Column({ length: 1000 })
     bio: string;
 
     @Column({ length: 320 })
