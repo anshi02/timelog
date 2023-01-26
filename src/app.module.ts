@@ -11,6 +11,7 @@ import { FacultiesModule } from './faculties/faculties.module';
 import { DivisionsModule } from './divisions/divisions.module';
 import { TimeSlotsModule } from './time-slots/time-slots.module';
 import { LecturesModule } from './lectures/lectures.module';
+import { UserProfilesModule } from './user-profiles/user-profiles.module';
 
 @Module({
     imports: [
@@ -26,6 +27,7 @@ import { LecturesModule } from './lectures/lectures.module';
         DivisionsModule,
         TimeSlotsModule,
         LecturesModule,
+        UserProfilesModule,
     ],
 })
 export class AppModule {}

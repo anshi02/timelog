@@ -1,5 +1,5 @@
+import User from 'src/users/entities/user.entity';
 import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import User from './user.entity';
 
 @Entity('user_profiles')
 export default class UserProfile {

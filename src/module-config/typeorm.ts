@@ -1,7 +1,7 @@
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import User from 'src/users/entities/user.entity';
-import UserProfile from 'src/users/entities/user-profile.entity';
+import UserProfile from 'src/user-profiles/entities/user-profile.entity';
 import Project from 'src/projects/entities/project.entity';
 import Subject from 'src/subjects/entities/subject.entity';
 import Room from 'src/rooms/entities/room.entity';

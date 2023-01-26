@@ -1,4 +1,6 @@
+import Faculty from 'src/faculties/entities/faculty.entity';
 import Project from 'src/projects/entities/project.entity';
+import UserProfile from 'src/user-profiles/entities/user-profile.entity';
 import {
     Column,
     Entity,
@@ -7,8 +9,6 @@ import {
     OneToOne,
     PrimaryGeneratedColumn,
 } from 'typeorm';
-import UserProfile from './user-profile.entity';
-import Faculty from 'src/faculties/entities/faculty.entity';
 
 @Entity('users')
 export default class User {
@@ -18,11 +18,8 @@ export default class User {
     @Column({ length: 254, unique: true })
     email: string;
 
-    @Column({ length: 512 })
+    @Column({ length: 60 })
     passwordHash: string;
-
-    @Column({ length: 8 })
-    passwordSalt: string;
 
     @OneToOne(() => UserProfile, (profile) => profile.user, {
         onDelete: 'CASCADE',
