@@ -8,4 +8,5 @@
     "files.trimFinalNewlines": false,
     "files.trimTrailingWhitespace": true,
     "files.eol": "\n",
+    "jest.autoRun": "off"
 }
