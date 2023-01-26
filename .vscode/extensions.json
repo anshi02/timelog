@@ -1,0 +1,21 @@
+{
+    "recommendations": [
+        // GitLens for repo management
+        "eamodio.gitlens",
+
+        // Prettier to auto format code according to defined rules
+        "esbenp.prettier-vscode",
+
+        // ESLint to allow for automatical and intelligent linting
+        "dbaeumer.vscode-eslint",
+
+        // Jest testing support
+        "Orta.vscode-jest",
+
+        // Basic intellisense engine
+        "VisualStudioExptTeam.vscodeintellicode",
+
+        // REST framework testing
+        "rangav.vscode-thunder-client"
+    ]
+}
