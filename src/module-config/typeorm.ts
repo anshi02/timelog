@@ -33,13 +33,13 @@ export const typeormModule = TypeOrmModule.forRootAsync({
     useFactory: async (configService: ConfigService) => ({
         type: 'mysql' as const,
 
-        host: configService.get<string>('db.hostname'),
-        port: configService.get<number>('db.port'),
-        username: configService.get<string>('db.username'),
-        password: configService.get<string>('db.password'),
-        database: configService.get<string>('db.databaseName'),
-        synchronize: true,
-        connectTimeout: configService.get<number>('db.timeoutMillis'),
+        host: configService.getOrThrow<string>('db.hostname'),
+        port: configService.getOrThrow<number>('db.port'),
+        username: configService.getOrThrow<string>('db.username'),
+        password: configService.getOrThrow<string>('db.password'),
+        database: configService.getOrThrow<string>('db.databaseName'),
+        synchronize: configService.getOrThrow<boolean>('app.isDevEnv'),
+        connectTimeout: configService.getOrThrow<number>('db.timeoutMillis'),
         entities,
     }),
 });

@@ -6,6 +6,7 @@ export default () => {
         app: {
             host: env.APP_HOST ?? 'localhost',
             port: parseInt(env.APP_PORT ?? '8080', 10),
+            isDevEnv: String(env.NODE_ENV).toLowerCase() !== 'production',
         },
     };
 

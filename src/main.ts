@@ -5,6 +5,10 @@ import { AppModule } from './app.module';
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
     const configService = app.get(ConfigService);
-    await app.listen(configService.getOrThrow<number>('app.port'));
+
+    const host = configService.getOrThrow<string>('app.host');
+    const port = configService.getOrThrow<number>('app.port');
+    await app.listen(port, host);
+    console.log(`Listening on http://${host}:${port}`);
 }
 bootstrap();
