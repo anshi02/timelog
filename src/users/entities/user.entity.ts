@@ -1,3 +1,4 @@
+import { Exclude } from 'class-transformer';
 import Faculty from 'src/faculties/entities/faculty.entity';
 import Project from 'src/projects/entities/project.entity';
 import UserProfile from 'src/user-profiles/entities/user-profile.entity';
@@ -19,6 +20,7 @@ export default class User {
     email: string;
 
     @Column({ length: 60 })
+    @Exclude()
     passwordHash: string;
 
     @OneToOne(() => UserProfile, (profile) => profile.user, {
