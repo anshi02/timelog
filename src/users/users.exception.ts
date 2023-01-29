@@ -3,12 +3,16 @@ import User from './entities/user.entity';
 
 export class UserNotFoundException extends NotFoundException {
     constructor(userId: number) {
-        super(`user with id ${userId} does not exist`);
+        super(`user with id ${userId} does not exist`, {
+            description: 'UserNotFoundException',
+        });
     }
 }
 
 export class UserExistsException extends ConflictException {
     constructor(user: User) {
-        super(`user with email ${user.email} already exists`);
+        super(`user with email ${user.email} already exists`, {
+            description: 'UserExistsException',
+        });
     }
 }
