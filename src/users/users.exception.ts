@@ -2,10 +2,18 @@ import { ConflictException, NotFoundException } from '@nestjs/common';
 import User from './entities/user.entity';
 
 export class UserNotFoundException extends NotFoundException {
-    constructor(userId: number) {
-        super(`user with id ${userId} does not exist`, {
-            description: 'UserNotFoundException',
-        });
+    constructor(userId: number);
+    constructor(userEmail: string);
+    constructor(field: number | string) {
+        if (typeof field === 'number') {
+            super(`user with id ${field} does not exist`, {
+                description: 'UserNotFoundException',
+            });
+        } else {
+            super(`user with email ${field} does not exist`, {
+                description: 'UserNotFoundException',
+            });
+        }
     }
 }
 

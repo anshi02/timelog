@@ -32,7 +32,6 @@ export const typeormModule = TypeOrmModule.forRootAsync({
     inject: [ConfigService],
     useFactory: async (configService: ConfigService) => ({
         type: 'mysql' as const,
-
         host: configService.getOrThrow<string>('db.hostname'),
         port: configService.getOrThrow<number>('db.port'),
         username: configService.getOrThrow<string>('db.username'),

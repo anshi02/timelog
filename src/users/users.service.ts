@@ -33,6 +33,14 @@ export class UsersService {
         return user;
     }
 
+    async fetchOneByEmail(email: string) {
+        const user = await this.usersRepo.findOneBy({ email });
+        if (!user) {
+            throw new UserNotFoundException(email);
+        }
+        return user;
+    }
+
     async create(userDto: CreateUserDto) {
         const existingUser = await this.usersRepo.findOneBy({
             email: userDto.email,
