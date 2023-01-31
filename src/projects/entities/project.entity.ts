@@ -1,3 +1,4 @@
+import { Exclude } from 'class-transformer';
 import Department from 'src/departments/entities/department.entity';
 import Division from 'src/divisions/entities/division.entity';
 import Faculty from 'src/faculties/entities/faculty.entity';
@@ -27,6 +28,7 @@ export default class Project {
 
     @ManyToOne(() => User, (user) => user.projects)
     @JoinColumn()
+    @Exclude()
     owner: User;
 
     @OneToMany(() => Subject, (subject) => subject.project, {
