@@ -1,5 +1,5 @@
-import Department from 'src/departments/entities/department.entity';
-import Lecture from 'src/lectures/entities/lecture.entity';
+import Department from '../../departments/entities/department.entity';
+import Lecture from '../../lectures/entities/lecture.entity';
 import {
     Column,
     Entity,

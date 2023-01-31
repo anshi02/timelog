@@ -1,7 +1,7 @@
-import Lecture from 'src/lectures/entities/lecture.entity';
-import Project from 'src/projects/entities/project.entity';
-import Subject from 'src/subjects/entities/subject.entity';
-import User from 'src/users/entities/user.entity';
+import Lecture from '../../lectures/entities/lecture.entity';
+import Project from '../../projects/entities/project.entity';
+import Subject from '../../subjects/entities/subject.entity';
+import User from '../../users/entities/user.entity';
 import {
     Column,
     Entity,

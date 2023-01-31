@@ -15,11 +15,11 @@ import {
     ValidationPipe,
 } from '@nestjs/common';
 import { Request } from 'express';
-import { JwtAuthGuard } from 'src/auth/auth.guard';
-import { UserToken } from 'src/auth/contracts/user-token.contract';
-import { JwtUser } from 'src/common/decorators/user.decorator';
-import { DefaultPipe } from 'src/common/pipes/default.pipe';
-import { makeUrl } from 'src/common/utils';
+import { JwtAuthGuard } from '../auth/auth.guard';
+import { UserToken } from '../auth/contracts/user-token.contract';
+import { JwtUser } from '../common/decorators/user.decorator';
+import { DefaultPipe } from '../common/pipes/default.pipe';
+import { makeUrl } from '../common/utils';
 import CreateProjectDto from './dto/create-project.dto';
 import UpdateProjectDto from './dto/update-project.dto';
 import { ProjectsService } from './projects.service';

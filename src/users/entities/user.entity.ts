@@ -1,7 +1,7 @@
 import { Exclude } from 'class-transformer';
-import Faculty from 'src/faculties/entities/faculty.entity';
-import Project from 'src/projects/entities/project.entity';
-import UserProfile from 'src/user-profiles/entities/user-profile.entity';
+import Faculty from '../../faculties/entities/faculty.entity';
+import Project from '../../projects/entities/project.entity';
+import UserProfile from '../../user-profiles/entities/user-profile.entity';
 import {
     Column,
     Entity,

@@ -13,7 +13,7 @@ import {
     ValidationPipe,
 } from '@nestjs/common';
 import * as querystring from 'querystring';
-import { DefaultPipe } from 'src/common/pipes/default.pipe';
+import { DefaultPipe } from '../common/pipes/default.pipe';
 import CreateUserDto from './dto/create-user.dto';
 import UpdateUserDto from './dto/update-user.dto';
 import { UsersService } from './users.service';

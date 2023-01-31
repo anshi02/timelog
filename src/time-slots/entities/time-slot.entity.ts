@@ -1,5 +1,5 @@
-import Lecture from 'src/lectures/entities/lecture.entity';
-import Project from 'src/projects/entities/project.entity';
+import Lecture from '../../lectures/entities/lecture.entity';
+import Project from '../../projects/entities/project.entity';
 import {
     Column,
     Entity,
