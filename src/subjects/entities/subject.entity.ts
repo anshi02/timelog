@@ -22,17 +22,15 @@ export default class Subject {
     @Column({ length: 100 })
     name: string;
 
-    @ManyToOne(() => Project, (project) => project.subjects)
+    @ManyToOne(() => Project, (project) => project.subjects, {
+        onDelete: 'CASCADE',
+    })
     @JoinColumn()
     project: Project;
 
-    @OneToMany(() => Lecture, (lecture) => lecture.subject, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Lecture, (lecture) => lecture.subject)
     lectures: Lecture[];
 
-    @ManyToMany(() => Faculty, (faculty) => faculty.subjects, {
-        orphanedRowAction: 'delete',
-    })
+    @ManyToMany(() => Faculty, (faculty) => faculty.subjects)
     faculties: Faculty[];
 }

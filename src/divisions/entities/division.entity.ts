@@ -20,7 +20,9 @@ export default class Division {
     @Column()
     strength: number;
 
-    @ManyToOne(() => Project, (project) => project.divisions)
+    @ManyToOne(() => Project, (project) => project.divisions, {
+        onDelete: 'CASCADE',
+    })
     @JoinColumn()
     project: Project;
 }

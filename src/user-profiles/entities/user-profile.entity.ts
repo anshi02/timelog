@@ -18,6 +18,6 @@ export default class UserProfile {
     @Column({ length: 320, nullable: true })
     picPath: string;
 
-    @OneToOne(() => User, (user) => user.profile)
+    @OneToOne(() => User, (user) => user.profile, { onDelete: 'CASCADE' })
     user: User;
 }

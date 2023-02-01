@@ -33,12 +33,12 @@ export default class TimeSlot {
     @Column({ type: 'enum', enum: Day })
     day: Day;
 
-    @ManyToOne(() => Project, (project) => project.timeSlots)
+    @ManyToOne(() => Project, (project) => project.timeSlots, {
+        onDelete: 'CASCADE',
+    })
     @JoinColumn()
     project: Project;
 
-    @OneToMany(() => Lecture, (lecture) => lecture.timeSlot, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Lecture, (lecture) => lecture.timeSlot)
     lectures: Lecture[];
 }

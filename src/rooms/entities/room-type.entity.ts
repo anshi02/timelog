@@ -17,12 +17,12 @@ export default class RoomType {
     @Column({ length: 50 })
     name: string;
 
-    @ManyToOne(() => Project, (project) => project.roomTypes)
+    @ManyToOne(() => Project, (project) => project.roomTypes, {
+        onDelete: 'CASCADE',
+    })
     @JoinColumn()
     project: Project;
 
-    @OneToMany(() => Room, (room) => room.type, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Room, (room) => room.type)
     rooms: Room[];
 }

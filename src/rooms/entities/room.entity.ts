@@ -21,16 +21,18 @@ export default class Room {
     @Column()
     capacity: number;
 
-    @ManyToOne(() => Department, (department) => department.rooms)
+    @ManyToOne(() => Department, (department) => department.rooms, {
+        onDelete: 'CASCADE',
+    })
     @JoinColumn()
     department: Department;
 
-    @OneToMany(() => Lecture, (lecture) => lecture.room, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Lecture, (lecture) => lecture.room)
     lectures: Lecture[];
 
-    @ManyToOne(() => RoomType, (roomType) => roomType.rooms)
+    @ManyToOne(() => RoomType, (roomType) => roomType.rooms, {
+        onDelete: 'CASCADE',
+    })
     @JoinColumn()
     type: RoomType;
 }

@@ -26,43 +26,29 @@ export default class Project {
     @Column({ length: 50 })
     name: string;
 
-    @ManyToOne(() => User, (user) => user.projects)
+    @ManyToOne(() => User, (user) => user.projects, { onDelete: 'CASCADE' })
     @JoinColumn()
     @Exclude()
     owner: User;
 
-    @OneToMany(() => Subject, (subject) => subject.project, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Subject, (subject) => subject.project)
     subjects: Subject[];
 
-    @OneToMany(() => Department, (department) => department.project, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Department, (department) => department.project)
     departments: Department[];
 
-    @OneToMany(() => Schedule, (schedule) => schedule.project, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Schedule, (schedule) => schedule.project)
     schedules: Schedule[];
 
-    @OneToMany(() => Faculty, (faculty) => faculty.project, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Faculty, (faculty) => faculty.project)
     faculties: Faculty[];
 
-    @OneToMany(() => RoomType, (roomType) => roomType.project, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => RoomType, (roomType) => roomType.project)
     roomTypes: RoomType[];
 
-    @OneToMany(() => Division, (division) => division.project, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Division, (division) => division.project)
     divisions: Division[];
 
-    @OneToMany(() => TimeSlot, (timeSlot) => timeSlot.project, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => TimeSlot, (timeSlot) => timeSlot.project)
     timeSlots: TimeSlot[];
 }

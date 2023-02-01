@@ -19,12 +19,12 @@ export default class Department {
     @Column({ length: 50 })
     name: string;
 
-    @ManyToOne(() => Project, (project) => project.departments)
+    @ManyToOne(() => Project, (project) => project.departments, {
+        onDelete: 'CASCADE',
+    })
     @JoinColumn()
     project: Project;
 
-    @OneToMany(() => Room, (room) => room.department, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Room, (room) => room.department)
     rooms: Room[];
 }

@@ -13,12 +13,12 @@ export default class Schedule {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @ManyToOne(() => Project, (project) => project.schedules)
+    @ManyToOne(() => Project, (project) => project.schedules, {
+        onDelete: 'CASCADE',
+    })
     @JoinColumn()
     project: Project;
 
-    @OneToMany(() => Lecture, (lecture) => lecture.schedule, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Lecture, (lecture) => lecture.schedule)
     lectures: Lecture[];
 }

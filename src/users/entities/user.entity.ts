@@ -23,15 +23,11 @@ export default class User {
     @Exclude()
     passwordHash: string;
 
-    @OneToOne(() => UserProfile, (profile) => profile.user, {
-        onDelete: 'CASCADE',
-    })
+    @OneToOne(() => UserProfile, (profile) => profile.user)
     @JoinColumn()
     profile: UserProfile;
 
-    @OneToMany(() => Project, (project) => project.owner, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Project, (project) => project.owner)
     projects: Project[];
 
     @OneToMany(() => Faculty, (faculty) => faculty.user)

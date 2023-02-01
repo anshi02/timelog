@@ -6,6 +6,7 @@ import {
     Column,
     Entity,
     JoinColumn,
+    JoinTable,
     ManyToMany,
     ManyToOne,
     OneToMany,
@@ -19,24 +20,23 @@ export default class Faculty {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @ManyToOne(() => Project, (project) => project.faculties)
+    @ManyToOne(() => Project, (project) => project.faculties, {
+        onDelete: 'CASCADE',
+    })
     @JoinColumn()
     project: Project;
 
     @Column({ length: 10 })
     code: string;
 
-    @ManyToOne(() => User, (user) => user.faculties)
+    @ManyToOne(() => User, (user) => user.faculties, { onDelete: 'SET NULL' })
     @JoinColumn()
-    user: User;
+    user: User | null;
 
-    @OneToMany(() => Lecture, (lecture) => lecture.faculty, {
-        onDelete: 'CASCADE',
-    })
+    @OneToMany(() => Lecture, (lecture) => lecture.faculty)
     lectures: Lecture[];
 
-    @ManyToMany(() => Subject, (subject) => subject.faculties, {
-        orphanedRowAction: 'delete',
-    })
+    @ManyToMany(() => Subject, (subject) => subject.faculties)
+    @JoinTable()
     subjects: Subject[];
 }
