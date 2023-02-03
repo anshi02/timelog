@@ -1,0 +1,43 @@
+API CONTRACT
+(VERSION-1)
+AUTHENTICATION
+- GET /auth
++ POST /auth/register
++ POST /auth/login
+- PATCH /auth/reset-password
+- DELETE /auth/delete-account
+USERS
++ GET /users
+USER PROFILES
++ GET /profile?email=:userEmail
+- POST /profile
+- PATCH /profile
+PROJECTS
+- GET /projects?offset=0&limit=20&detailed=false
+- GET /projects/:projectId
+- POST /projects
+- PATCH /projects/:projectId
+- DELETE /projects/:projectId?hard=false
+DEPARTMENTS
+- GET projects/:projectId/departments?offset=0&limit=2
+- GET projects/:projectId/departments/:departmentId
+- POST projects/:projectId/departments
+- PATCH projects/:projectId/departments/:departmentId
+- PATCH projects/:projectId/departments/:departmentId/restore
+- DELETE projects/:projectId/departments/:departmentId?hard=false
+APPLY TO: FACULTIES, SUBJECTS, ROOMS, ROOM TYPES, DIVISIONS, TIME SLOTS
+SCHEDULE
+- GET projects/:projectId/schedules?offset=0&limit=20
+- GET projects/:projectId/schedules/:scheduleId
+- DELETE projects/:projectId/schedules/:scheduleId?hard=false
+BIN (TRASHED ITEMS)
+- GET bin/projects?limit=20&offset=0
+- GET bin/projects/:projectId?previewSize=10
+- GET bin/projects/:projectId/departments?limit=20&offset=0
+- GET bin/projects/:projectId/faculties?limit=20&offset=0
+- GET bin/projects/:projectId/subjects?limit=20&offset=0
+- GET bin/projects/:projectId/rooms?limit=20&offset=0
+- GET bin/projects/:projectId/room-types?limit=20&offset=0
+- GET bin/projects/:projectId/divisions?limit=20&offset=0
+- GET bin/projects/:projectId/time-slots?limit=20&offset=0
+- GET bin/projects/:projectId/time-slots?limit=20&offset=0
